@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-us">
+
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <title>{% block title %}{% endblock %}</title>
+
+      <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+      <link rel="mask-icon" href="/assets/img/favicon-pinned.svg" color="#71bd16">
+      <link rel="shortcut icon" href="/assets/img/favicon.ico">
+
+      <link rel="stylesheet" href="/assets/css/style.css">
+    </head>
+
+    <body>
+        <nav>
+            <h1>{% block site %}{% endblock %}</h1>
+            {% block menu %}{% endblock %}
+        </nav>
+        <main>
+            <section>
+                {% block content %}{% endblock %}
+            </section>
+            <footer>
+                {% block footer %}{% endblock %}
+            </footer>
+        </main>
+    </body>
+
+</html>

@@ -1,0 +1,32 @@
+/* style.scss -- global styles */
+
+
+/* variables */
+// --colors
+$white:     #ffffff;
+$black:     #000000;
+$slate:     #64748b;
+$blue:      #3b82f6;
+$purple:    #8b5cf6;
+$red:       #f43f5e;
+$orange:    #f97316;
+$yellow:    #ffee33;
+$green:     #00aa33;
+
+
+// --font stacks
+$font-f-sans: -apple-system, blinkmacsystemfont, "segoe ui", roboto, "helvetica neue", helvetica, arial, sans-serif, "apple color emoji", "segoe ui emoji", "segoe ui symbol";
+$font-f-mono: "sf mono", consolas, "roboto mono", "andale mono wt", "andale mono", "lucida console", "dejavu sans mono", "bitstream vera sans mono", "liberation mono", monaco, "courier new", courier, monospace;
+
+
+// --font weights
+$font-w-lite: 300;
+$font-w-reg: 400;
+$font-w-semi: 500;
+$font-w-bold: 600;
+
+
+/* imports */
+@import 'modules/reset';
+@import 'modules/core';
+@import 'modules/code';

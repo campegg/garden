@@ -1,0 +1,208 @@
+/* _core.scss -- main styles */
+
+
+// page layout
+body {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap-reverse;
+}
+
+main {
+    flex: 3 0 0;
+    min-width: 20rem;
+    padding: 1.75rem 2rem 2rem 2rem;
+
+    section, footer {
+        max-width: 80ch;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    section {
+        margin-bottom: 1.75rem;
+    }
+}
+
+nav {
+    flex: 1 0 0;
+    min-width: 16rem;
+    padding: 1.75rem 2rem;
+}
+
+@media (min-width: 36rem) {
+    main {
+        height: 100vh;
+        overflow-x: scroll;
+    }
+
+    nav {
+        height: 100vh;
+        max-height: 100vh;
+        overflow-x: scroll;
+    }
+}
+
+
+// element definitions
+a {
+    transition: all 0.5s ease;
+    text-underline-offset: 0.11111em;
+
+    &:link, &:visited {
+        color: $blue;
+        text-decoration-color: lighten($black, 70%);
+    }
+
+    &:hover, &:active {
+        color: $red;
+        text-decoration-color: $red;
+    }
+}
+
+b, strong {
+    font-weight: $font-w-bold;
+}
+
+body {
+    font-family: $font-f-sans;
+    font-size: 16px;
+    font-weight: $font-w-reg;
+    color: lighten($black, 15%);
+    background: $white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $font-w-bold;
+}
+
+h1 {
+    font-size: 1.1875rem;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 1.125rem;
+    margin-bottom: 0.375rem;
+}
+
+h3 {
+    font-size: 1.0625rem;
+    margin-bottom: 0.375rem;
+}
+
+h4, h5, h6 {
+    font-weight: 1rem;
+}
+
+i, em {
+    font-style: italic;
+}
+
+nav {
+    background: darken($slate, 25%);
+    color: $white;
+
+    ul {
+        color: darken($white, 25%);
+    }
+
+    a {
+        &:link, &:visited {
+            color: $white;
+            text-decoration-color: lighten($black, 70%);
+        }
+
+        &:hover, &:active {
+            color: lighten($red, 15%);
+            text-decoration-color: lighten($red, 15%);
+        }
+    }
+}
+
+pre, code {
+    font-size: 0.95rem;
+    font-family: $font-f-mono;
+}
+
+p, ol, ul, blockquote, pre {
+    margin-bottom: 1.75rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+ol, li ol {
+    li {
+        &::marker {
+            color: lighten($black, 40%);
+            font-size: 0.975rem;
+        }
+        padding-left: 0.5rem;
+    }
+}
+
+ul, li ul {
+    margin-left: 1.75rem;
+    padding-left: 0;
+
+    li {
+        &::marker {
+            color: lighten($black, 50%);
+            font-size: 0.75rem;
+        }
+        padding-left: 0.5rem;
+
+        &.complete {
+            text-decoration: line-through;
+            text-decoration-color: lighten($black, 30%);
+
+            &::marker {
+                color: $green;
+            }
+
+            &:after {
+                display: inline-block;
+                margin-left: 0.25rem;
+                color: $green;
+                content: "Done!";
+                text-decoration: none;
+            }
+        }
+
+        &.in-progress {
+            &::marker {
+                color: $orange;
+            }
+        }
+    }
+}
+
+
+// generic classes
+.codehilite {
+    @extend p;
+    padding: 0.25rem 0.75rem 0.375rem 0.75rem;
+}
+
+.codehilitetable {
+    display: block;
+    max-width: 100%;
+    overflow: scroll;
+    margin-bottom: 1.75rem;
+}
+
+[id*='line-'] {
+    display: block;
+    * {
+        white-space: nowrap;
+    }
+}
+
+.meta {
+    color: lighten($black, 50%);
+    font-size: 0.75rem;
+    font-style: italic;
+}

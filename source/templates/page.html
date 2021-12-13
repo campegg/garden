@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block site %}{{ site|safe }}{% endblock %}
+
+{% block title %}{{ site|safe }}: {{ title|safe }}{% endblock %}
+
+{% block menu %}
+<ul>
+{% for item in menu.pages recursive %}
+    <li>{% if item.url %}<a href="{{ item.url }}">{% endif %}{{ item.name|title }}{% if item.url %}</a>{% endif %}
+    {% if item.pages %}
+        <ul>{{ loop(item.pages) }}</ul>
+    {% endif %}</li>
+{% endfor %}
+</ul>
+{% endblock %}
+
+{% block content %}
+    {{ html|safe }}
+{% endblock %}
+
+{% block footer %}
+    <p class="meta">Created {{ created }}{% if updated %}; last update {{ updated }}{% endif %}</p>
+{% endblock %}

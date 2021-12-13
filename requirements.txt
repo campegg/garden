@@ -1,0 +1,8 @@
+importlib-metadata==4.8.2
+Jinja2==3.0.3
+Markdown==3.3.6
+MarkupSafe==2.0.1
+Pygments==2.10.0
+python-dotenv==0.19.2
+watchdog==2.1.6
+zipp==3.6.0
